@@ -16,7 +16,7 @@ const App = () => {
 
 	// Search a players skills
 	const searchPlayer = async (PlayerName) => {
-		const response = await fetch(`${profile_URL}${PlayerName}`)
+		const response = await fetch(`${cors_server}${profile_URL}${PlayerName}`)
 		const data = await response.json()
 
 		console.log(data.skillvalues)
