@@ -1,0 +1,17 @@
+.skillTable {
+	width: 80%;
+
+	color: aliceblue;
+	text-align: left;
+}
+
+th,
+td {
+	padding: 8px;
+}
+
+img {
+	display: inline-block;
+	height: auto;
+	width: 25px;
+}
