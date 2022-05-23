@@ -41,8 +41,8 @@ function SkillTable({ player }) {
 					<td>
 						<img
 							src={
-								`img/${id_dict[info.id]}.png` !== 'NULL'
-									? `img/${id_dict[info.id]}.png`
+								`/img/${id_dict[info.id]}.png` !== 'NULL'
+									? `/img/${id_dict[info.id]}.png`
 									: 'https://via.placeholder.com/25'
 							}
 							alt={id_dict[info.id]}
