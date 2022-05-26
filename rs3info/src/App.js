@@ -18,8 +18,6 @@ const App = () => {
 	const searchPlayer = async (PlayerName) => {
 		const response = await fetch(`${cors_server}${profile_URL}${PlayerName}`)
 		const data = await response.json()
-
-		console.log(data.skillvalues)
 		setPlayer(data.skillvalues)
 	}
 	useEffect(() => {
