@@ -36,7 +36,7 @@ function SkillTable({ player }) {
 	const DisplayData = React.Children.toArray(
 		player.map((info) => {
 			const xp = (info.xp / 10) | 0
-			const source = `/img/${id_dict[info.id]}.png`
+			const source = `img/${id_dict[info.id]}.png`
 			return (
 				<tr>
 					<td>
