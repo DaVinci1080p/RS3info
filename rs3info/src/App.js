@@ -26,7 +26,7 @@ const App = () => {
 
 	return (
 		<div className="app">
-			<h1>Maxing competition</h1>
+			<h1>Player Lookup</h1>
 			<div className="search">
 				<input
 					placeholder="Search player"
