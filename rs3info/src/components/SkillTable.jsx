@@ -49,7 +49,9 @@ function SkillTable({ player }) {
 							alt={id_dict[info.id]}
 						></img>
 					</td>
-					<td>{id_dict[info.id]}</td>
+					<td>
+						{id_dict[info.id][0].toUpperCase() + id_dict[info.id].substring(1)}
+					</td>
 					<td>{info.level}</td>
 					<td>{xp.toLocaleString('en-US')}</td>
 					<td>{info.rank.toLocaleString('en-US')}</td>
@@ -59,8 +61,8 @@ function SkillTable({ player }) {
 	)
 
 	return (
-		<div className="skillTable">
-			<table className="skillTable" striped="true" borderd="true" hover="true">
+		<div className="tabel">
+			<table className="skillTable" striped="true" hover="true">
 				<thead>
 					<tr>
 						<th></th>

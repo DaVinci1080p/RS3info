@@ -1,57 +1,22 @@
-import { useEffect, useState } from 'react'
 import React from 'react'
 import './css/App.css'
+import Navbar from './components/Navbar'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './pages/index'
+import PlayerProfile from './pages/PlayerProfile'
+import MaxingRace from './pages/MaxingRace'
 
-//component & image imports
-import SkillTable from './components/SkillTable'
-import SearchIcon from './img/search.svg'
-
-//API endpoints & cors workaround
-const profile_URL = 'https://apps.runescape.com/runemetrics/profile?user='
-const cors_server = 'https://vincis-cors.herokuapp.com/'
-
-const App = () => {
-	const [player, setPlayer] = useState([])
-	const [searchTerm, setSearchTerm] = useState('')
-
-	// Search a players skills
-	const searchPlayer = async (PlayerName) => {
-		const response = await fetch(`${cors_server}${profile_URL}${PlayerName}`)
-		const data = await response.json()
-		setPlayer(data.skillvalues)
-	}
-	useEffect(() => {
-		searchPlayer('')
-	}, [])
-
+function App() {
 	return (
-		<div className="app">
-			<h1>Player Lookup</h1>
-			<div className="search">
-				<input
-					placeholder="Search player"
-					value={searchTerm}
-					onChange={(e) => setSearchTerm(e.target.value)}
-					onKeyPress={(e) => {
-						if (e.key === 'Enter') {
-							searchPlayer(searchTerm)
-						}
-					}}
-				/>
-				<img
-					src={SearchIcon}
-					alt="search"
-					onClick={() => searchPlayer(searchTerm)}
-				/>
-			</div>
-			{player?.length > 0 ? (
-				<SkillTable player={player} />
-			) : (
-				<div className="empty">
-					<h2>No skills found</h2>
-				</div>
-			)}
-		</div>
+		<Router>
+			<Navbar />
+			<Routes>
+				<Route path="/home" exact element={<Home />} />
+				<Route path="/PlayerProfile" element={<PlayerProfile />} />
+				<Route path="/MaxingRace" element={<MaxingRace />} />
+			</Routes>
+		</Router>
 	)
 }
+
 export default App
