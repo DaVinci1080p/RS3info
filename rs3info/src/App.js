@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/index'
 import PlayerProfile from './pages/PlayerProfile'
-import MaxingRace from './pages/MaxingRace'
+import MaxingCalc from './pages/MaxingCalc'
 
 function App() {
 	return (
@@ -13,7 +13,7 @@ function App() {
 			<Routes>
 				<Route path="/home" exact element={<Home />} />
 				<Route path="/PlayerProfile" element={<PlayerProfile />} />
-				<Route path="/MaxingRace" element={<MaxingRace />} />
+				<Route path="/MaxingCalc" element={<MaxingCalc />} />
 			</Routes>
 		</Router>
 	)

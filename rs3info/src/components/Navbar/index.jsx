@@ -10,7 +10,7 @@ const Navbar = () => {
 				<NavMenu>
 					<NavLink to="/home">Home</NavLink>
 					<NavLink to="/PlayerProfile">Player Lookup</NavLink>
-					<NavLink to="/MaxingRace">Maxing Race</NavLink>
+					<NavLink to="/MaxingCalc">Maxing Calc</NavLink>
 
 					{/* Second Nav */}
 					{/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
