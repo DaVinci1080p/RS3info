@@ -17,7 +17,6 @@ const cors_server = 'https://vincis-cors.herokuapp.com/';
 const PlayerProfile = () => {
 	const [player, setPlayer] = useState([]);
 	const [searchTerm, setSearchTerm] = useState('');
-	const [divChange, setDivChange] = useState(true);
 
 	// Search a players skills
 	const searchPlayer = async (PlayerName) => {
@@ -39,23 +38,22 @@ const PlayerProfile = () => {
 					onChange={(e) => setSearchTerm(e.target.value)}
 					onKeyPress={(e) => {
 						if (e.key === 'Enter') {
-							trackPromise(searchPlayer(searchTerm)) &&
-								setDivChange(!divChange);
+							trackPromise(searchPlayer(searchTerm));
 						}
 					}}
 				/>
 				<img
 					src={SearchIcon}
 					alt="search"
-					onClick={() =>
-						trackPromise(searchPlayer(searchTerm)) && setDivChange(!divChange)
-					}
+					onClick={() => trackPromise(searchPlayer(searchTerm))}
 				/>
 			</div>
 			{player?.length > 0 ? (
 				<SkillTable player={player} />
 			) : (
-				<div>{divChange ? <WaitingInput /> : <LoadingIndicator />}</div>
+				<div>
+					<LoadingIndicator />
+				</div>
 			)}
 		</div>
 	);

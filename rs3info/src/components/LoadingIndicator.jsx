@@ -6,10 +6,12 @@ const LoadingIndicator = (props) => {
 	const { promiseInProgress } = usePromiseTracker();
 	return (
 		promiseInProgress && (
-			<div className="empty">
-				<h2>Loading!!!</h2>
+			<div>
+				<div className="empty">
+					<h2>Loading!!!</h2>
+				</div>
 				<div>
-					<PulseLoader color="#2f3237" />
+					<PulseLoader />
 				</div>
 			</div>
 		)
